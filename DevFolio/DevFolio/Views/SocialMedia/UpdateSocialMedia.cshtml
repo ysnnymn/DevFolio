@@ -1,0 +1,41 @@
+﻿@model DevFolio.Models.TblSocialMedia
+@{
+    ViewBag.Title = "UpdateSocialMedia";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Sosyal Medya Güncelleme</h2>
+@{
+    var iconList = new List<SelectListItem>();
+
+    iconList.Add(new SelectListItem { Text = "Instagram", Value = "ion-social-instagram" });
+    iconList.Add(new SelectListItem { Text = "Facebook", Value = "ion-social-facebook" });
+    iconList.Add(new SelectListItem { Text = "YouTube", Value = "ion-social-youtube" });
+    iconList.Add(new SelectListItem { Text = "LinkedIn", Value = "ion-social-linkedin" });
+    iconList.Add(new SelectListItem { Text = "Twitter", Value = "ion-social-twitter" });
+}
+
+<form method="post">
+    @Html.HiddenFor(x => x.SocialMediaID)
+    <label>Sosyal Medya İsmi </label>
+    @Html.TextBoxFor(x => x.PlatformName, new { @class = "form-control" })
+    <br />
+    <label>Bağlantı Linki </label>
+    @Html.TextBoxFor(x => x.RedirectUrl, new { @class = "form-control" })
+    <br />
+    <label>Icon</label>
+    @Html.DropDownListFor(model => model.IconUrl, iconList, "İkon Seçiniz", new { @class = "form-control" })
+    <br />
+    <label>Durum </label>
+    <br />
+    <label>
+        Kullanılıyor <input type="radio" name="Status" value="true">
+    </label>
+    <span style="margin-right: 10px;"></span> <!-- Boşluk ekleniyor -->
+    <label>
+        Kullanılmıyor <input type="radio" name="Status" value="false">
+    </label>
+    <br />
+
+    <button class="btn btn-success">Güncelle</button>
+</form>

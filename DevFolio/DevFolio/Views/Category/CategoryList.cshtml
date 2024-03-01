@@ -1,0 +1,27 @@
+﻿@model List<DevFolio.Models.TblCategory>
+@{
+    ViewBag.Title = "CategoryList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Kategori Listesi</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Kategori Adı</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.CategoryID</td>
+            <td>@item.CategoryName</td>
+            <td><a href="/Category/DeleteCategory/@item.CategoryID" class=" btn btn-danger"> Sil</a></td>
+            <td><a href="/Category/UpdateCategory/@item.CategoryID"class=" btn btn-success"> Güncelle</a></td>
+        </tr>
+
+    }
+</table>
+<a href="/Category/CreateCategory/" class="btn btn-info"> Yeni Kategori Girişi</a>
+

@@ -1,0 +1,34 @@
+﻿@model List<DevFolio.Models.TblAbout>
+@{
+    ViewBag.Title = "AboutList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h1>Hakkımda</h1>
+<table class="table table-bordered">
+
+    <tr>
+        <th>#</th>
+        <th>Hakkımda</th>
+        <th>Güncelle</th>
+        <th>Sil</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+       <tr>
+           <td>@item.AboutID</td>
+           <td>@item.Description</td>
+           <td>  <a href="/About/UpdateAbout/@item.AboutID" class="btn btn-info">Güncelle</a></td>
+           <td><a href="/About/DeleteAbout/@item.AboutID" class="btn btn-danger">Sil</a></td>
+       </tr>
+
+        
+      
+        
+    }
+
+</table>
+@if (ViewBag.abountCount<1)
+{
+<a href="/About/AddAbout/" class="btn btn-warning">Oluştur</a>
+}

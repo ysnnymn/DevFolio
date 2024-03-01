@@ -1,0 +1,48 @@
+﻿﻿@model DevFolio.Models.TblFeature
+@{
+    ViewBag.Title = "CreateFeature";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Başlık Ekle</h2>
+
+<br />
+<div class="container">
+
+    @if (ViewBag.countFeature > 0)
+    {
+        <div class="alert alert-danger d-flex align-items-center" role="alert">
+            <div class="row d-flex align-items-center ">
+                <div class="col">
+                    Sadece bir adet profil olabilir.Lütfen mevcut profili silin yada güncelleyin.
+                </div>
+                <div class="w-100"></div>
+                <div class="col">
+                    <a href="/Feature/FeatureList/" class="btn btn-danger">Geri dön</a>
+
+                </div>
+            </div>
+        </div>
+
+    }
+    else
+    {
+
+        using (Html.BeginForm("CreateFeature", "Feature", FormMethod.Post))
+        {
+            <form class="form-group" method="post">
+                <label>Başlık</label>
+
+                @Html.TextBoxFor(x => x.HeaderTitle, new { @class = "form-control" })
+                <br />
+                <label>Açıklama</label>
+                @Html.TextBoxFor(x => x.HeaderDescription, new { @class = "form-control" })
+                <br />
+
+
+                <button class="btn btn-primary">Kaydet</button>
+            </form>
+
+        }
+    }
+</div>

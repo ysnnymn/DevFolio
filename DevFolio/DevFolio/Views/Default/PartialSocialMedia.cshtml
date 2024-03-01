@@ -1,0 +1,13 @@
+﻿﻿@model List<DevFolio.Models.TblSocialMedia>
+
+<ul>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-VvooJfo4UC+2DHKQ6j6e3NuZpO9pR+e9d03Jm0Whd9GBjIiqAgyIl+Lyf1IYP+Hz" crossorigin="anonymous">
+    @foreach (var item in Model)
+    {
+        
+        <li><a href="@item.RedirectUrl"><span class="ico-circle"><i class="@item.IconUrl"></i></span></a></li>
+    }
+</ul>
+
+
+

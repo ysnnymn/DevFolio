@@ -1,0 +1,24 @@
+﻿﻿@model DevFolio.Models.TblAdmin
+@{
+    ViewBag.Title = "CreateAdmin";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Yönetici Ekle</h2>
+
+<br />
+
+    
+        <form method="post">
+            @Html.HiddenFor(x=>x.AdminID)
+            <label>Kullanıcı Adı</label>
+
+            @Html.TextBoxFor(x => x.Username, new { @class = "form-control" })
+            <br />
+            <label>Şifre</label>
+            @Html.TextBoxFor(x => x.Password, new { @class = "form-control", @type = "password" })
+            <br />
+            <button class="btn btn-primary">Kaydet</button>
+        </form>
+
+    

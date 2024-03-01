@@ -1,0 +1,15 @@
+﻿@model DevFolio.Models.TblAbout
+@{
+    ViewBag.Title = "AddAbout";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Hakkımda Oluşturma</h2>
+
+<form method="post">
+    
+    <label>Hakkımda</label>
+    @Html.TextBoxFor(x=>x.Description,new  {@class="form-control" })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>

@@ -1,0 +1,31 @@
+﻿﻿@model DevFolio.Models.TblProject
+@{
+    ViewBag.Title = "CreateProject";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Yeni Proje</h2>
+
+<br />
+<div class="container">
+
+    
+    <form class="form-group" method="post">
+        <label>Proje Başlık</label>
+
+        @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+        <br />
+        <label>Proje Kategorisi</label>
+        @Html.DropDownListFor(m => m.TblCategory.CategoryID, (List<SelectListItem>)ViewBag.category, new { @class = "form-control" })
+        <br />
+        <label>Proje Resmi</label>
+        @Html.EditorFor(x => x.CoverImageUrl, new { htmlAttributes = new { @class = "form-control", type = "file" } })
+
+        <br />
+
+        <button class="btn btn-primary">Kaydet</button>
+    </form>
+
+    
+
+</div>

@@ -1,0 +1,107 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+@Html.Action("PartialHead","Default")
+
+<body id="page-top">
+
+    @Html.Action("PartialNavbar", "Default")
+    <!--/ Intro Skew Star /-->
+    @Html.Action("PartialFeature", "Default")
+    <!--/ Intro Skew End /-->
+
+    <section id="about" class="about-mf sect-pt4 route">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="box-shadow-full">
+                        <div class="row">
+                            <div class="col-md-6">
+                                @Html.Action("PartialProfile", "Default")
+                                @Html.Action("PartialSkill", "Default")
+                            </div>
+                            @Html.Action("PartialAbout", "Default")
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--/ Section Services Star /-->
+   
+
+                @Html.Action("PartialService", "Default")
+      
+    <!--/ Section Services End /-->
+
+
+    @Html.Action("PartialStatistic", "Default")
+
+    <!--/ Section Portfolio Star /-->
+    <section id="work" class="portfolio-mf sect-pt4 route">
+        <div class="container">
+            @Html.Action("PartialProject", "Default")
+        </div>
+    </section>
+    <!--/ Section Portfolio End /-->
+    <!--/ Section Testimonials Star /-->
+
+    @Html.Action("PartialTestimonial", "Default")
+
+    <section class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(/Templates/devfolio-master/img/overlay-bg.jpg)">
+        <div class="overlay-mf"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="contact-mf">
+                        <div id="contact" class="box-shadow-full">
+                            <div class="row">
+                                @Html.Action("PartialContact", "Default")
+                                <div class="col-md-6">
+                                    <div class="title-box-2 pt-4 pt-md-0">
+                                        <h5 class="title-left">
+                                            İletişim
+                                        </h5>
+                                    </div>
+
+                                    @Html.Action("PartialAddress", "Default")
+
+
+                                    <div class="socials">
+                                        @Html.Action("PartialSocialMedia", "Default")
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="copyright-box">
+                            <p class="copyright">&copy; Copyright <strong>Yasin Yaman</strong>.</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+    <!--/ Section Contact-footer End /-->
+
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <div id="preloader"></div>
+
+    @Html.Action("PartialScript", "Default")
+
+
+</body>
+</html>

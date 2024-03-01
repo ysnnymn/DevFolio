@@ -1,0 +1,27 @@
+﻿@model List<DevFolio.Models.TblSkill>
+@{
+    ViewBag.Title = "SkillList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Yetenekler Listesi</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Yetenek Başlığı</th>
+        <th>Yetenek Oranı</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.SkillID</td>
+            <td>@item.SkillTitle</td>
+            <td>@item.SkillValue</td>
+            <td><a href="/Skill/DeleteSkill/@item.SkillID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Skill/UpdateSkill/@item.SkillID" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Skill/CreateSkill/" class="btn btn-info">Yeni Yetenek Girişi</a>

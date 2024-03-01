@@ -1,0 +1,34 @@
+﻿@model List<DevFolio.Models.TblProfile>
+@{
+    ViewBag.Title = "ProfileList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Profil Listesi</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Başlık</th>
+        <th>Ad-Soyad</th>
+        <th>Mail</th>
+        <th>Telefon Numarası</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ProfileID</td>
+            <td>@item.Title</td>
+            <td>@item.NameSurname</td>
+            <td>@item.Email</td>
+            <td>@item.Phone</td>
+            <td><a href="/Profile/DeleteProfile/@item.ProfileID"class=" btn btn-danger">Sil</a></td>
+            <td><a href="/Profile/UpdateProfile/@item.ProfileID"class=" btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+
+
+</table>
+<a href="/Profile/CreateProfile/" class="btn btn-info">Yeni Profil Girişi</a> 

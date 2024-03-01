@@ -1,0 +1,31 @@
+﻿﻿@model DevFolio.Models.TblService
+@{
+    ViewBag.Title = "CreateService";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+@{
+    var iconList = new List<SelectListItem>();
+
+    iconList.Add(new SelectListItem { Text = "ion-iphone", Value = "ion-iphone" });
+    iconList.Add(new SelectListItem { Text = "ion-code-working", Value = "ion-code-working" });
+
+    
+
+}
+<h2>Hizmet Ekleme</h2>
+
+@using (Html.BeginForm("CreateService", "Service", FormMethod.Post))
+{
+    <label>Hizmet Adı</label>
+    @Html.TextBoxFor(Model => Model.ServiceTitle, new { @class = "form form-control" })
+    <br />
+    <label>Hizmet Açıklaması</label>
+    @Html.TextBoxFor(Model => Model.Description, new { @class = "form form-control" })
+    <br />
+    <label>Hizmet Görseli</label>
+    @Html.DropDownListFor(model => model.ServiceImageUrl, iconList, "İkon Seçiniz", new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Ekle</button>
+}

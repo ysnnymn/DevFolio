@@ -1,0 +1,30 @@
+﻿@model List<DevFolio.Models.TblTestimonial>
+<div class="testimonials paralax-mf bg-image" style="background-image: url(/Templates/devfolio-master/img/overlay-bg.jpg)">
+    <div class="overlay-mf"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="testimonial-mf" class="owl-carousel owl-theme">
+                    @foreach (var item in Model)
+                    {
+
+                        <div class="testimonial-box">
+                            <div class="author-test">
+                                <img src="~/Templates/devfolio-master/img/testimonial-2.jpg" alt="" class="rounded-circle b-shadow-a">
+                                <span class="author">@item.NameSurname</span>
+                            </div>
+                            <div class="content-test">
+                                <p class="description lead">
+                                    @item.Description
+                                </p>
+                                <span class="comit"><i class="fa fa-quote-right"></i></span>
+                            </div>
+                        </div>
+                    }
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

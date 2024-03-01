@@ -1,0 +1,24 @@
+﻿@model DevFolio.Models.TblProfile
+@{
+    ViewBag.Title = "UpdateProfile";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Profil Güncelleme</h2>
+<form method="post">
+    @Html.HiddenFor(x => x.ProfileID)
+    <label>Başlık</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+    <label>Ad-Soyad</label>
+    @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control" })
+    <br />
+    <label>Mail</label>
+    @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+    <br />
+    <label>Telefon Numarası</label>
+    @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>
+

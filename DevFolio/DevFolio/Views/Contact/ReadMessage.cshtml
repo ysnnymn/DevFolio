@@ -1,0 +1,26 @@
+﻿﻿@model DevFolio.Models.TblContact
+@{
+    ViewBag.Title = "ReadMessage";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Mesaj Detay</h2>
+
+<div class="container">
+
+    <br />
+    <table class="table table-bordered">
+
+
+        <tr>
+            <td><b>Gönderen : </b> @Model.NameSurname</td>
+        </tr>
+        <tr><td><b>E-mail : </b>@Model.Email</td></tr>
+        <tr><td><b>Konu : </b>@Model.Subject</td></tr>
+        <tr><td><b>Tarih : </b>@(((DateTime)Model.SendMessageDate).ToString("dd.MM.yyyy"))</td></tr>
+        <tr><td><b>Mesaj : </b>@Model.Message</td></tr>
+        <tr><td><a href="/Contact/MessageList/" class="btn btn-primary">Geri Dön</a></td></tr>
+
+
+    </table>
+</div>

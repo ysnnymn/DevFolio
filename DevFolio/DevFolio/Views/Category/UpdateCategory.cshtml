@@ -1,0 +1,16 @@
+﻿@model DevFolio.Models.TblCategory
+@{
+    ViewBag.Title = "UpdateCategory";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Kategori Güncelleme Sayfası</h2>
+
+<form method="post">
+    @Html.HiddenFor(x=>x.CategoryID)
+    <label>Kategori İsmi</label>
+    @Html.TextBoxFor(x=>x.CategoryName,new {@class="form-control" })
+    <br />
+    <button class="btn btn-success">Kategoriyi Güncelle</button>
+</form>
+

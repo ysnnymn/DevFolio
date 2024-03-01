@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "CreateProfile";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Profil Oluşturma Sayfası</h2>
+<form method="post">
+    <label>Başlık</label>
+    <input type="text" class="form-control" name="Title" />
+    <br /> 
+    <label>Ad-Soyad</label>
+    <input type="text" class="form-control" name="NameSurname" />
+    <br />
+    <label>Mail</label>
+    <input type="email" class="form-control" name="Email" />
+    <br />
+    <label>Telefon Numarası</label>
+    <input type="number" class="form-control" name="Phone" />
+    <br />
+    <button class="btn btn-info">Profili Kaydet</button>
+
+</form>
+

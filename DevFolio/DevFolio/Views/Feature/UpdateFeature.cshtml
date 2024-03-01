@@ -1,0 +1,27 @@
+﻿﻿@model DevFolio.Models.TblFeature
+@{
+    ViewBag.Title = "UpdateFeature";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Başlık Güncelle</h2>
+
+<br />
+<div class="container">
+
+    @using (Html.BeginForm("UpdateFeature", "Feature", FormMethod.Post))
+    {
+        <form class="form-group" method="post">
+            <label>Başlık</label>
+            @Html.HiddenFor(x => x.FeatureID)
+            @Html.TextBoxFor(x => x.HeaderTitle, new { @class = "form-control" })
+            <br />
+            <label>Açıklama</label>
+            @Html.TextBoxFor(x => x.HeaderDescription, new { @class = "form-control" })
+            <br />
+
+            <button class="btn btn-primary">Güncelle</button>
+        </form>
+
+    }
+</div>

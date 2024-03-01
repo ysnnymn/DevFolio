@@ -1,0 +1,49 @@
+﻿﻿﻿@model DevFolio.Models.TblContact
+
+<div class="col-md-6">
+    <div class="title-box-2">
+        <h5 class="title-left">
+            Mesaj Gönder
+        </h5>
+    </div>
+    <div>
+
+        <form method="post" action="Add" role="form" class="contactForm">
+            <div id="sendmessage" class="@ViewBag.c">Mesajınız gönderildi.Teşekkür Ederim.</div>
+            @*<div>@ViewBag.m</div>*@
+            <div id="errormessage"></div>
+            <div class="row">
+                <div class="col-md-12 mb-3">
+                    <div class="form-group">
+                        <input type="text" name="NameSurname" class="form-control" id="name" placeholder="Ad-Soyad" data-rule="minlen:4" data-msg="Lütfen en az 4 karakter girin" />
+                        @*@Html.TextBoxFor(x=>x.NameSurname ,new {@class="form-control", @id="name" ,@placeholder="Your Name" ,@data-rule="minlen:4" ,@data-msg="Please enter at least 4 chars"})*@
+                        <div class="validation"></div>
+                    </div>
+                </div>
+                <div class="col-md-12 mb-3">
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="Email" id="email" placeholder="E-Posta Adersiniz" data-rule="email" data-msg="lütfen geçerli eposta adresini giriniz" />
+                        <div class="validation"></div>
+                    </div>
+                </div>
+                <div class="col-md-12 mb-3">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="Subject" id="subject" placeholder="Konu" data-rule="minlen:4" data-msg="Lütfen konunun en az 8 karakterini girin" />
+                        <div class="validation"></div>
+                    </div>
+                </div>
+                <div class="col-md-12 mb-3">
+                    <div class="form-group">
+                        <textarea class="form-control" name="Message" rows="5" data-rule="required" data-msg="Lütfen bizim için bir şeyler yazın" placeholder="Mesajınız"></textarea>
+                        <div class="validation"></div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <button type="submit" class="button button-a button-big button-rouded">Mesajı Gönder</button>
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="~/Template/devfolio-master/lib/jquery/jquery.min.js"></script>

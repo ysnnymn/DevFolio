@@ -1,0 +1,32 @@
+﻿﻿@model DevFolio.Models.TblService
+@{
+    ViewBag.Title = "UpdateService";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Service Güncelleme</h2>
+
+@{
+    var iconList = new List<SelectListItem>();
+
+    iconList.Add(new SelectListItem { Text = "ion-iphone", Value = "ion-iphone" });
+    iconList.Add(new SelectListItem { Text = "ion-code-working", Value = "ion-code-working" });
+
+
+
+}
+
+@using (Html.BeginForm("UpdateService", "Service", FormMethod.Post))
+{
+    @Html.HiddenFor(Model => Model.ServiceID)
+    <label>Hizmet Adı</label>
+    @Html.TextBoxFor(Model => Model.ServiceTitle, new { @class = "form form-control" })
+    <br />
+    <label>Hizmet Açıklaması</label>
+    @Html.TextBoxFor(Model => Model.Description, new { @class = "form form-control" })
+    <br />
+    <label>Hizmet Görseli</label>
+    @Html.DropDownListFor(model => model.ServiceImageUrl, iconList, "İkon Seçiniz", new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Ekle</button>
+}

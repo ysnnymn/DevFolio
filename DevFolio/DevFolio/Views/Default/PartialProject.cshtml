@@ -1,0 +1,49 @@
+﻿@model List<DevFolio.Models.TblProject>
+
+<section id="work" class="portfolio-mf sect-pt4 route">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="title-box text-center">
+                    <h3 class="title-a">
+                        Projelerim
+                    </h3>
+                    <p class="subtitle-a">
+                        Yapmış Olduğum projeler
+                    </p>
+                    <div class="line-mf"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4">
+                    <div  class="work-box">
+
+                        <a href="@item.CoverImageUrl" data-lightbox="gallery-mf">
+                            <div class="work-img cover-img">
+                                <img src="~/Templates/devfolio-master/@item.CoverImageUrl" alt="" class="img-fluid">
+                            </div>
+                            <div class="work-content">
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                        <h2 class="w-title">@item.Title</h2>
+                                        <div class="w-more">
+                                            <span class="w-ctegory">@item.TblCategory.CategoryName</span> / <span class="w-date">@(((DateTime)item.CreatedDate).ToString("dd.MM.yyyy"))</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="w-like">
+                                            <span class="ion-ios-plus-outline"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
